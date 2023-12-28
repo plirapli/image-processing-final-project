@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@layer base {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .hasImage:hover section {
+    background-color: rgba(5, 5, 5, 0.4);
+  }
+  .hasImage:hover button:hover {
+    background: rgba(5, 5, 5, 0.45);
+  }
+  #overlay p,
+  i {
+    opacity: 0;
+  }
+  #overlay.draggedover {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  #overlay.draggedover p,
+  #overlay.draggedover i {
+    opacity: 1;
+  }
+}
+
+@layer components {
+  /* Form Input */
+  .form-input {
+    @apply px-3 py-2;
+    @apply text-black w-full bg-black bg-opacity-5;
+    @apply focus:outline-none focus:ring-1 ring-offset-current ring-offset-2 ring-gray-400;
+    @apply transition-all transform shadow-none rounded-md;
+  }
+  .form-input-sm {
+    @apply px-2 py-1.5 text-sm;
+    @apply text-black w-full bg-black bg-opacity-5;
+    @apply focus:outline-none focus:ring-1 ring-offset-current ring-offset-2 ring-gray-400;
+    @apply transition-all transform shadow-none rounded-md;
+  }
+  .form-input-white {
+    @apply text-black bg-white;
+  }
+
+  /* Button */
+  .button {
+    @apply px-4 py-2;
+    @apply flex items-center justify-center font-medium shadow-none rounded-md;
+    @apply focus:outline-none transition-all transform active:scale-95;
+  }
+  .button-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+  .button-black {
+    @apply text-white bg-black hover:bg-gray-800;
+  }
+  .button-gray {
+    @apply text-black bg-black bg-opacity-10 hover:bg-opacity-20;
+  }
+  .button-danger {
+    @apply text-red-600 bg-red-100 hover:bg-red-200;
+  }
+  .button-danger-secondary {
+    @apply text-red-600 bg-white hover:bg-red-100;
+  }
+}
